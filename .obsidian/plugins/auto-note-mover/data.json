@@ -4,20 +4,30 @@
   "statusBar_trigger_indicator": true,
   "folder_tag_pattern": [
     {
-      "folder": "Glossary/Characters",
+      "folder": "Glossary Entries/Characters",
       "tag": "#character",
       "pattern": ""
     },
     {
-      "folder": "Glossary/Vocab",
+      "folder": "Glossary Entries/Vocab",
       "tag": "#vocab",
+      "pattern": ""
+    },
+    {
+      "folder": "Glossary Entries/Locations",
+      "tag": "#location",
+      "pattern": ""
+    },
+    {
+      "folder": "Glossary Entries/Factions",
+      "tag": "#faction",
       "pattern": ""
     }
   ],
   "use_regex_to_check_for_excluded_folder": false,
   "excluded_folder": [
     {
-      "folder": ""
+      "folder": "templates"
     }
   ]
 }

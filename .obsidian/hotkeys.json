@@ -26,5 +26,24 @@
       ],
       "key": "V"
     }
-  ]
+  ],
+  "templater-obsidian:create-templates/locationEntry.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "L"
+    }
+  ],
+  "templater-obsidian:create-templates/factionEntry.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "F"
+    }
+  ],
+  "global-search:open": []
 }

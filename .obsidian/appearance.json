@@ -1,5 +1,9 @@
 {
   "cssTheme": "Typewriter",
   "theme": "moonstone",
-  "accentColor": "#f5915c"
+  "accentColor": "#f5915c",
+  "enabledCssSnippets": [
+    "glossary"
+  ],
+  "translucency": false
 }

@@ -1,69 +1,63 @@
 ```dataviewjs
-
 const tagName = "#glossary";
 
-const getSectionContent = (markDownString, sectionName) => {
+const TYPES = {
+  "#vocab":     { group: "Definitions", heading: "Title", description: "Definition" },
+  "#character": { group: "Characters",  heading: "Name",  description: "Background" },
+  "#location":  { group: "Locations",   heading: "Name",  description: "Description" },
+};
+
+const DEFAULT_TYPE = { group: "Other", heading: "Name", description: "Description" };
+
+function getSectionContent(markdown, sectionName) {
   const sectionPattern = new RegExp("#{1,5}\\s*" + sectionName);
   const nextSectionPattern = new RegExp("#{1,5}");
 
-  let sectionHeaderLength;
-  if (sectionPattern.test(markDownString)) {
-    sectionHeaderLength = markDownString.match(sectionPattern)[0].length;
-  } else {
-    return "<span>-</span>";
-  }
+  const match = markdown.match(sectionPattern);
+  if (!match) return "-";
 
-  const startingIndex = markDownString.search(sectionPattern);
-  const endingIndex = markDownString
-    .substring(startingIndex + sectionHeaderLength)
-    .search(nextSectionPattern);
+  const headerLen = match[0].length;
+  const start = markdown.search(sectionPattern) + headerLen;
 
-  if (endingIndex === -1) {
-    return markDownString.substring(startingIndex + sectionHeaderLength).trim();
-  }
+  const rest = markdown.substring(start);
+  const nextIdx = rest.search(nextSectionPattern);
 
-  return markDownString
-    .substring(
-      startingIndex + sectionHeaderLength,
-      startingIndex + sectionHeaderLength + endingIndex
-    )
-    .trim();
-};
+  return (nextIdx === -1 ? rest : rest.substring(0, nextIdx)).trim();
+}
 
-// Group by type (Definitions vs Characters)
+function getTypeInfo(page) {
+  const tags = page.file.tags ?? [];
+  const typeTag = Object.keys(TYPES).find(t => tags.includes(t));
+  return typeTag ? TYPES[typeTag] : DEFAULT_TYPE;
+}
+
 const pages = dv.pages(tagName);
-const typeGroups = pages.groupBy(note =>
-  note.file.tags?.includes("#vocab") ? "Definitions" : "Characters"
-);
 
-// Optional: force ordering
-const order = ["Characters", "Definitions"];
-typeGroups.sort((a, b) => order.indexOf(a.key) - order.indexOf(b.key));
+// group by group label (Characters / Definitions / ...)
+const groups = pages.groupBy(p => getTypeInfo(p).group)
+  .sort((a, b) => a.key.localeCompare(b.key));
 
-for (let group of typeGroups) {
-  const isDefinitions = group.key === "Definitions";
-  const sectionName = isDefinitions ? "Title" : "Name";
-  const descriptionName = isDefinitions ? "Definition" : "Background";
+for (const group of groups) {
+  const info = getTypeInfo(group.rows[0]);
+  const headers = [info.heading, info.description, "Related"];
 
-  const tableEntries = await Promise.all(
-    group.rows.map(async (note) => {
-      const content = await dv.io.load(note.file.path);
+  const rows = await Promise.all(
+    group.rows.map(async (p) => {
+      const content = await dv.io.load(p.file.path);
       return {
-        sortKey: note.file.name,
-        title: note.file.link, // clickable link
-        description: getSectionContent(content, descriptionName),
-        related: note.related
+        sortKey: p.file.name,
+        link: p.file.link,
+        desc: getSectionContent(content, info.description),
+        related: p.related ? p.related : []
       };
     })
   );
-
-  dv.header(2, group.key);
+  dv.header(2, `${group.key} (${group.rows.length})`);
   dv.table(
-    [sectionName, descriptionName, "Related"],
-    tableEntries
+    headers,
+    rows
       .sort((a, b) => a.sortKey.localeCompare(b.sortKey))
-      .map(e => [e.title, e.description, e.related])
+      .map(r => [r.link, r.desc, r.related])
   );
 }
-
 ```

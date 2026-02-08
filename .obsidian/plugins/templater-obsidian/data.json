@@ -30,7 +30,9 @@
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
     "templates/characterEntry.md",
-    "templates/vocabEntry.md"
+    "templates/vocabEntry.md",
+    "templates/locationEntry.md",
+    "templates/factionEntry.md"
   ],
   "startup_templates": [
     ""

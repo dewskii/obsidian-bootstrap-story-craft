@@ -1,0 +1,32 @@
+/* Dataview tables: force styles to apply */
+.markdown-preview-view .dataview.table-view-table tr {
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+}
+
+.markdown-preview-view .dataview.table-view-table td,
+.markdown-preview-view .dataview.table-view-table th {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+/* Hide the header count "(n)" if your theme uses the small-text span */
+.markdown-preview-view .dataview.table-view-table thead th .dataview.small-text,
+.markdown-preview-view .dataview.table-view-table thead th .small-text {
+  display: none !important;
+}
+.markdown-preview-view table.dataview tr {
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+}
+
+/* Clamp the Definition/Background column in dataview tables */
+table.dataview tbody td:nth-child(2) > * {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important; /* tweak */
+  overflow: hidden !important;
+}
+
+/* In case dataview renders plain text (no child elements), also apply to td */
+table.dataview tbody td:nth-child(2) {
+  overflow: hidden !important;
+}
