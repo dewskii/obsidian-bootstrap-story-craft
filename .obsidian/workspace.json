@@ -1,0 +1,259 @@
+{
+  "main": {
+    "id": "3da0993e394e1f28",
+    "type": "split",
+    "children": [
+      {
+        "id": "cbec5ee7236b097a",
+        "type": "split",
+        "children": [
+          {
+            "id": "e3bc310fa6e8a586",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d5552a585250e652",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              }
+            ]
+          },
+          {
+            "id": "94710b36aa4b8f9f",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d35cdd8ad1fb0597",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Glossary.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Glossary"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "62d5a6930ead7a75",
+    "type": "split",
+    "children": [
+      {
+        "id": "557d66bad6dd2592",
+        "type": "tabs",
+        "dimension": 67.2,
+        "children": [
+          {
+            "id": "600b5f0e01f32fc1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0db18770b5050538",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2536642444d03c39",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      },
+      {
+        "id": "4efff42c313e5c92",
+        "type": "tabs",
+        "dimension": 32.800000000000004,
+        "children": [
+          {
+            "id": "3f4acad53ed4ca7f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b2d0389a473f4891",
+    "type": "split",
+    "children": [
+      {
+        "id": "47010c05f3be8c08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c6ccb1b453468b92",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Eren.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Eren"
+            }
+          },
+          {
+            "id": "75b20477ce29c333",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Eren.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Eren"
+            }
+          },
+          {
+            "id": "57610f6c5a49b18c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "042225cb763d7ee6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "18f5adb828bf58ac",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Eren.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Eren"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false,
+      "folder-by-tags-distributor:Redistribute all notes to folder by tags": false
+    }
+  },
+  "active": "600b5f0e01f32fc1",
+  "lastOpenFiles": [
+    "README.md",
+    "Notes.md",
+    "Glossary/Characters/Eren.md",
+    "Glossary/Characters/Eren.md",
+    "Plot.md",
+    "Glossary/Characters/Eren.md",
+    "Glossary/Characters/Eren.md",
+    "Protagonist.md",
+    "Glossary.md",
+    "Conductor.md",
+    "templates/vocabEntry.md",
+    "templates/characterEntry.md",
+    "null.md",
+    "Glossary/Vocab",
+    "Glossary/Characters",
+    "Glossary",
+    "Characters.md",
+    "templates/vocabEntry copy.md",
+    "Elements/Conductor.md",
+    "Glossary Entries/Conductor.md",
+    "Test Entry.md",
+    "templates/glossaryEntry.md",
+    "Glossary Entries/1-1 null 2026-02-08.md",
+    "templates",
+    "Glossary Entries",
+    "Plot Premis.md",
+    "Elements"
+  ]
+}
