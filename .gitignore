@@ -1,1 +1,6 @@
 .DS_Store
+
+# ignore all these since they update based on editor state
+.obsidian/plugins/remember-cursor-position/cursor-positions.json
+.obsidian/plugins/extended-graph/data.json
+.obsidian/workspace.json

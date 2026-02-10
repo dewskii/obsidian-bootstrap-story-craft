@@ -1,8 +1,8 @@
 {
   "enableFeatures": {
     "graph": {
-      "auto-enabled": false,
-      "tags": false,
+      "auto-enabled": true,
+      "tags": true,
       "properties": false,
       "property-key": false,
       "links": false,
@@ -14,8 +14,8 @@
       "focus": false,
       "shapes": false,
       "elements-stats": false,
-      "names": false,
-      "icons": false,
+      "names": true,
+      "icons": true,
       "arrows": false,
       "layers": false
     },
@@ -41,15 +41,41 @@
   },
   "interactiveSettings": {
     "tag": {
-      "colormap": "hsv",
-      "colors": [],
+      "colormap": "copper_r",
+      "colors": [
+        {
+          "type": "character",
+          "color": "#6e8a68",
+          "recursive": false
+        },
+        {
+          "type": "location",
+          "color": "#10280b",
+          "recursive": false
+        },
+        {
+          "type": "plot",
+          "color": "#00b8ff",
+          "recursive": false
+        },
+        {
+          "type": "vocab",
+          "color": "#f6edd9",
+          "recursive": false
+        },
+        {
+          "type": "faction",
+          "color": "#ef665f",
+          "recursive": false
+        }
+      ],
       "unselected": [],
       "excludeRegex": {
         "regex": "",
         "flags": ""
       },
       "noneType": "none",
-      "showOnGraph": true,
+      "showOnGraph": false,
       "enableByDefault": true
     },
     "link": {
@@ -79,25 +105,25 @@
   },
   "additionalProperties": {},
   "backupGraphOptions": {
-    "collapse-filter": true,
-    "search": "",
-    "showTags": false,
+    "collapse-filter": false,
+    "search": "-path:templates -file:README  ",
+    "showTags": true,
     "showAttachments": false,
     "hideUnresolved": false,
-    "showOrphans": true,
-    "collapse-color-groups": true,
+    "showOrphans": false,
+    "collapse-color-groups": false,
     "colorGroups": [],
-    "collapse-display": true,
+    "collapse-display": false,
     "showArrow": false,
     "textFadeMultiplier": 0,
-    "nodeSizeMultiplier": 1,
-    "lineSizeMultiplier": 1,
-    "collapse-forces": true,
-    "centerStrength": 0.518713248970312,
-    "repelStrength": 10,
+    "nodeSizeMultiplier": 1.71908420138889,
+    "lineSizeMultiplier": 3.61825954861111,
+    "collapse-forces": false,
+    "centerStrength": 0.958810763888889,
+    "repelStrength": 20,
     "linkStrength": 1,
-    "linkDistance": 250,
-    "scale": 1,
+    "linkDistance": 196,
+    "scale": 1.0646222580112337,
     "close": true
   },
   "openInNewTab": false,
@@ -113,23 +139,32 @@
         "showAttachments": false,
         "showOrphans": true,
         "showTags": false,
-        "localBacklinks": true,
-        "localForelinks": true,
-        "localInterlinks": false,
-        "localJumps": 1,
         "lineSizeMultiplier": 1,
-        "nodeSizeMultiplier": 1,
+        "nodeSizeMultiplier": 1.51746961805556,
         "showArrow": false,
         "textFadeMultiplier": 0,
-        "centerStrength": 0.5187132489703118,
-        "linkDistance": 250,
+        "centerStrength": 0.345486111111111,
+        "linkDistance": 233,
         "linkStrength": 1,
-        "repelStrength": 10
+        "repelStrength": 8.72743055555556
       },
-      "toggleTypes": {},
-      "logicTypes": {},
+      "toggleTypes": {
+        "tag": [],
+        "link": [],
+        "folder": []
+      },
+      "logicTypes": {
+        "tag": "OR",
+        "link": "OR",
+        "folder": "OR"
+      },
       "enableLayers": false,
-      "currentLayerLevel": 0
+      "currentLayerLevel": 0,
+      "pinNodes": {},
+      "hiddenLegendRows": [],
+      "collapsedLegendRows": [
+        "tag"
+      ]
     }
   ],
   "startingStateID": "default-vault",
@@ -161,10 +196,10 @@
   "focusScaleFactor": 1.8,
   "highlightOpenNodes": false,
   "highlightSearchResults": false,
-  "maxNodes": 20,
+  "maxNodes": 100,
   "delay": 500,
   "revertAction": false,
-  "enableCSS": false,
+  "enableCSS": true,
   "cssSnippetFilename": "",
   "shapeQueries": {
     "circle": {
@@ -281,7 +316,7 @@
   "numberOfCharacters": null,
   "ellipsis": "…",
   "showOnlyFileName": false,
-  "noExtension": false,
+  "noExtension": true,
   "usePropertiesForName": [],
   "addBackgroundToName": false,
   "nameVerticalOffset": 0,
@@ -313,14 +348,27 @@
   "pinNodeModifier": "Alt",
   "useLeftClickToSelect": true,
   "selectNodeModifier": "Shift",
-  "filterAbstractFiles": [],
+  "filterAbstractFiles": [
+    {
+      "regex": "templates/*",
+      "flag": ""
+    },
+    {
+      "regex": "README.md",
+      "flag": ""
+    },
+    {
+      "regex": "Resources",
+      "flag": ""
+    }
+  ],
   "ignoreInlineLinks": false,
   "collapseState": true,
-  "collapseLegend": true,
-  "resetAfterChanges": false,
+  "collapseLegend": false,
+  "resetAfterChanges": true,
   "collapsedSettings": {
     "automation": true,
-    "tags": true,
+    "tags": false,
     "properties": true,
     "links": true,
     "arrows": true,
@@ -334,10 +382,10 @@
     "names": true,
     "zoom": true,
     "local-graph": true,
-    "display": true,
-    "filter": true,
+    "display": false,
+    "filter": false,
     "inputs": true,
-    "performances": true,
+    "performances": false,
     "beta": true
   },
   "selectionMode": "replace",
@@ -353,5 +401,25 @@
     "useModifiedNames": true,
     "showIcons": false
   },
-  "multipleNodesData": {}
+  "multipleNodesData": {
+    "shapeData": {
+      "type": "grid",
+      "center": {
+        "x": 0,
+        "y": 0
+      },
+      "step": 100
+    },
+    "queryData": {
+      "combinationLogic": "AND",
+      "rules": [
+        {
+          "source": "file",
+          "property": "",
+          "value": "Glossary",
+          "logic": "is"
+        }
+      ]
+    }
+  }
 }

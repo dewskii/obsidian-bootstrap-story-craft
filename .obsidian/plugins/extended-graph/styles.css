@@ -23,6 +23,12 @@ body {
     }
 }
 
+.graph-legend-container {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
 /* LEGEND */
 
 .graph-legend-container {
@@ -110,12 +116,12 @@ body {
     }
 
     .and-or-group {
-        display: flex;
-        justify-content: center;
+        display: none !important;
+        /* justify-content: center;
 
         button {
             padding: var(--size-2-2) var(--size-4-2);
-        }
+        } */
     }
 
     .is-collapsed {
@@ -123,8 +129,7 @@ body {
         background-color: var(--background-secondary);
         overflow: hidden;
 
-        .graph-legend,
-        .and-or-group button {
+        .graph-legend {
             font-size: 0;
             height: 12px;
             width: 12px;
@@ -143,14 +148,14 @@ body {
         --icon-size: 14px;
         --icon-stroke: 1px;
 
-        display: flex;
+        display: none !important;
         padding: var(--size-4-2);
         gap: var(--size-4-2);
         border-top: 1px solid var(--background-modifier-border);
 
         button {
-            display: flex;
-            align-items: center;
+            display: none !important;
+            /* align-items: center;
             gap: var(--size-2-2);
             padding: var(--size-4-1) var(--size-4-2);
             overflow: hidden;
@@ -161,7 +166,7 @@ body {
 
             span {
                 margin-right: 4px;
-            }
+            } */
         }
 
         .is-inactive {
@@ -203,10 +208,11 @@ body {
     }
 
     .and-or-group {
-        flex-direction: column;
+        display: none !important;
+        /* flex-direction: column;
         align-items: stretch;
         gap: var(--size-2-1);
-        padding: var(--size-2-1);
+        padding: var(--size-2-1); */
     }
 
     .is-collapsed {
@@ -216,6 +222,7 @@ body {
     }
 
     .graph-legend-hide-rows-container {
+        display: none !important;
         justify-content: center;
     }
 }
@@ -243,8 +250,9 @@ body {
     }
 
     .and-or-group {
-        gap: var(--size-2-1);
-        padding: var(--size-2-1);
+        display: none !important;
+        /* gap: var(--size-2-1);
+        padding: var(--size-2-1); */
     }
 
     .is-collapsed {
@@ -264,7 +272,7 @@ body {
     }
 
     .graph-legend-hide-rows-container {
-        flex-direction: column;
+        display: none !important;
     }
 }
 

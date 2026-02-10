@@ -1,32 +1,180 @@
-/* Dataview tables: force styles to apply */
-.markdown-preview-view .dataview.table-view-table tr {
-  border-bottom: 1px solid var(--background-modifier-border) !important;
+/* 
+ Generated with Copilot Claude
+*/
+/* --- Full-width Dataview container --- */
+.markdown-preview-view .dataview,
+.markdown-preview-view .dataview.table-view-container,
+.markdown-preview-view table.dataview,
+.markdown-preview-view .dataview.table-view-table {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-.markdown-preview-view .dataview.table-view-table td,
-.markdown-preview-view .dataview.table-view-table th {
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+/* --- Card shell --- */
+.markdown-preview-view table.dataview,
+.markdown-preview-view .dataview.table-view-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+
+  background: rgb(255, 236, 215) !important;
+  border: 1px solid rgb(255, 236, 215) !important;
+
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32),
+              0 2px 6px rgba(0, 0, 0, 0.22) !important; */
+
+  table-layout: fixed !important; /* key for consistent 2-col layout + ellipsis */
 }
 
-/* Hide the header count "(n)" if your theme uses the small-text span */
+/* --- Header (Properties-like) --- */
+.markdown-preview-view table.dataview thead th,
+.markdown-preview-view .dataview.table-view-table thead th {
+  padding: 10px 14px !important;
+
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-size: 0.80em !important;
+
+  background: rgba(157, 128, 98) !important;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important; */
+  color: rgb(255, 236, 215) !important;
+
+  text-align: left !important;
+  white-space: nowrap !important;
+}
+
+/* Hide Dataview header count "(n)" */
 .markdown-preview-view .dataview.table-view-table thead th .dataview.small-text,
 .markdown-preview-view .dataview.table-view-table thead th .small-text {
   display: none !important;
 }
-.markdown-preview-view table.dataview tr {
-  border-bottom: 1px solid var(--background-modifier-border) !important;
+
+/* --- Cells / row separators --- */
+.markdown-preview-view table.dataview td,
+.markdown-preview-view .dataview.table-view-table td {
+  padding: 14px 16px !important;
+  vertical-align: middle !important;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important; */
 }
 
-/* Clamp the Definition/Background column in dataview tables */
-table.dataview tbody td:nth-child(2) > * {
+.markdown-preview-view table.dataview tbody tr:last-child td,
+.markdown-preview-view .dataview.table-view-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+.markdown-preview-view table.dataview tbody tr:hover,
+.markdown-preview-view .dataview.table-view-table tbody tr:hover {
+  background: rgb(230, 204, 177, 0.8) !important;
+  color: rgb(255, 255, 255) !important
+}
+
+.markdown-preview-view table.dataview tbody tr:hover a,
+.markdown-preview-view .dataview.table-view-table tbody tr:hover a {
+  color: rgb(253, 253, 253) !important;
+  text-decoration: underline !important;
+}
+
+/* --- Two-column layout (consistent spacing, fixes “gap”) --- */
+/* Column 1: term/title */
+.markdown-preview-view table.dataview thead th:nth-child(1),
+.markdown-preview-view table.dataview tbody td:nth-child(1) {
+  width: 34% !important;              /* tweak 30–40% */
+  padding-right: 26px !important;     /* gutter like your Characters table */
+}
+
+/* Column 2: description */
+.markdown-preview-view table.dataview thead th:nth-child(2),
+.markdown-preview-view table.dataview tbody td:nth-child(2) {
+  width: 66% !important;
+  padding-left: 20px !important;      /* consistent separation */
+  padding-right: 16px !important;
+}
+
+/* --- Term/title: readable, ellipsis only when needed --- */
+/* Apply ellipsis to the LINK element (not the whole cell), so you don't get "E..." when there is room */
+.markdown-preview-view table.dataview tbody td:nth-child(1) a {
+  display: inline-block !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+}
+
+/* If the cell contains non-link text, keep it from wrapping */
+.markdown-preview-view table.dataview tbody td:nth-child(1) {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+/* --- Description clamp (font-size aware) --- */
+.markdown-preview-view table.dataview tbody td:nth-child(2) {
+  line-height: 1.35 !important;
+}
+
+/* Clamp the first rendered block inside the cell */
+.markdown-preview-view table.dataview tbody td:nth-child(2) > * {
   display: -webkit-box !important;
   -webkit-box-orient: vertical !important;
-  -webkit-line-clamp: 2 !important; /* tweak */
+  -webkit-line-clamp: 2 !important;      /* tweak lines */
   overflow: hidden !important;
+  white-space: normal !important;
+  line-height: 1.35 !important;
+  max-height: calc(1.35em * 2) !important; /* 2 lines, scales with font size */
 }
 
-/* In case dataview renders plain text (no child elements), also apply to td */
-table.dataview tbody td:nth-child(2) {
-  overflow: hidden !important;
+/* Stabilize row rhythm (prevents odd vertical alignment shifts) */
+.markdown-preview-view table.dataview tbody tr {
+  height: calc(1.35em * 2 + 28px) !important;
+}
+
+/* --- Rounded corners --- */
+.markdown-preview-view table.dataview thead tr:first-child th:first-child,
+.markdown-preview-view .dataview.table-view-table thead tr:first-child th:first-child {
+  border-top-left-radius: 6px !important;
+}
+.markdown-preview-view table.dataview thead tr:first-child th:last-child,
+.markdown-preview-view .dataview.table-view-table thead tr:first-child th:last-child {
+  border-top-right-radius: 6px !important;
+}
+.markdown-preview-view table.dataview tbody tr:last-child td:first-child,
+.markdown-preview-view .dataview.table-view-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 6px !important;
+}
+.markdown-preview-view table.dataview tbody tr:last-child td:last-child,
+.markdown-preview-view .dataview.table-view-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 6px !important;
+}
+
+/* --- Mobile --- */
+@media (max-width: 700px) {
+  .markdown-preview-view table.dataview thead th,
+  .markdown-preview-view table.dataview td {
+    padding: 12px 14px !important;
+  }
+
+  .markdown-preview-view table.dataview thead th:nth-child(1),
+  .markdown-preview-view table.dataview tbody td:nth-child(1) {
+    width: 44% !important;
+    padding-right: 18px !important;
+  }
+
+  .markdown-preview-view table.dataview thead th:nth-child(2),
+  .markdown-preview-view table.dataview tbody td:nth-child(2) {
+    width: 56% !important;
+    padding-left: 14px !important;
+  }
+
+  .markdown-preview-view table.dataview tbody td:nth-child(2) > * {
+    -webkit-line-clamp: 3 !important;
+    max-height: calc(1.35em * 3) !important;
+  }
+
+  .markdown-preview-view table.dataview tbody tr {
+    height: auto !important;
+  }
 }

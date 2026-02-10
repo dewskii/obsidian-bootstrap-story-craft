@@ -12,11 +12,11 @@
   "enable_system_commands": false,
   "shell_path": "",
   "user_scripts_folder": "",
-  "enable_folder_templates": true,
+  "enable_folder_templates": false,
   "folder_templates": [
     {
-      "folder": "templates",
-      "template": "templates/glossaryEntry.md"
+      "folder": "Resources",
+      "template": "templates/resourceEntry.md"
     }
   ],
   "enable_file_templates": false,
@@ -32,7 +32,9 @@
     "templates/characterEntry.md",
     "templates/vocabEntry.md",
     "templates/locationEntry.md",
-    "templates/factionEntry.md"
+    "templates/factionEntry.md",
+    "templates/plotEntry.md",
+    "templates/resourceEntry.md"
   ],
   "startup_templates": [
     ""
