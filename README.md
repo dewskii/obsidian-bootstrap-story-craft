@@ -9,17 +9,14 @@ Obsidian Vault Template for story crafting and world building.
 - Preconfigured theming and custom stylesheets
 
 ## Note Templates
-[Character Template](templates/characterEntry.md) &#x21E7;+&#8984;+C
-
-[Faction Template](templates/factionEntry.md) &#x21E7;+&#8984;+F
-
-[Location Template](templates/locationEntry.md) &#x21E7;+&#8984;+L
-
-[Plot Entry Template](templates/plotEntry.md) &#x21E7;+&#8984;+P
-
-[Resource Template](templates/resourceEntry.md) &#x21E7;+&#8984;+R 
-
-[Vocab Definition Template](templates/vocabEntry.md) &#x21E7;+&#8984;+V
+| template | shortcut |
+|----------|-----------|
+|[Character Entry](templates/characterEntry.md) | &#x21E7;+&#8984;+C |
+|[Faction Entry](templates/factionEntry.md) | &#x21E7;+&#8984;+F |
+|[Location Entry](templates/locationEntry.md) | &#x21E7;+&#8984;+L |
+|[Plot Entry](templates/plotEntry.md) | &#x21E7;+&#8984;+P |
+|[Resource Entry](templates/resourceEntry.md) | &#x21E7;+&#8984;+R |
+|[Vocab Entry](templates/vocabEntry.md) | &#x21E7;+&#8984;+V |
 
 ## Plugins
 - [auto-note-mover](https://obsidian.md/plugins?id=auto-note-mover)
