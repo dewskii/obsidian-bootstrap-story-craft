@@ -1,5 +1,5 @@
 ---
-topic: <% titleTag %>
+topic: example-source
 tags:
   - "#glossary"
   - "#plot"

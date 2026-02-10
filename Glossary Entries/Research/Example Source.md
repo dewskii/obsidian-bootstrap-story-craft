@@ -1,5 +1,5 @@
 ---
-topic: <% titleTag %>
+topic: example-source
 source: https://motherfuckingwebsite.com/
 tags:
   - "#glossary"

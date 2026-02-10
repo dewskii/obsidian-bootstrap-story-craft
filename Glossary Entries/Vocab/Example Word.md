@@ -1,5 +1,5 @@
 ---
-topic: test
+topic: example-word
 tags:
   - "#glossary"
   - "#vocab"
