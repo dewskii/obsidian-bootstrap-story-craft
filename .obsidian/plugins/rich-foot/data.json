@@ -6,9 +6,7 @@
   "datesOpacity": 1,
   "linksOpacity": 1,
   "showReleaseNotes": true,
-  "excludedFolders": [
-    "Glossary.md"
-  ],
+  "excludedFolders": [],
   "dateColor": "var(--text-accent)",
   "borderColor": "var(--text-accent)",
   "linkColor": "var(--link-color)",
