@@ -1,13 +1,17 @@
-<%*  
-let title = tp.file.title;
-let titleTag = title
-let _title = await tp.system.prompt('Note name: ');
+<%* 
 
-if (title.startsWith('Untitled')) {  
-  title = `${_title}`; // Set and store the new title
-  titleTag = title.replace(/\s+/g, '-').toLowerCase();
-  await tp.file.rename(title); 
-}  
+const file = app.vault.getAbstractFileByPath(`${tp.file.title}.md`);
+
+let prompt = await tp.system.prompt('Plot Note Name: ');
+if (prompt === null) {
+  await app.vault.trash(file, true);
+  return;
+}
+ 
+const title = `${prompt}`;
+const titleTag = title.replace(/\s+/g, '-').toLowerCase();
+await tp.file.rename(title); 
+
 -%>
 ---
 topic: <% titleTag %>

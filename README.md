@@ -1,10 +1,9 @@
-# Basic Obsidian Story Template 
-Obsidian Vault Template for story crafting and world building.
+# Story Building Template for Obsidian
+Template project for bootstrapping a story building vault.
 
 ## Features
-- Templates Characters, Factions, Locations, Plot Notes, Resources, and Vocab Definitions
-- Notes created with a template are automatically moved to the appropriate folder in Glossary Entries/
-- A Glossary note that leverage Dataview to automatically index entries by type.
+- Templates included for Characters, Factions, Locations, Plot Notes, Resources, and Vocab entries
+- A self-updating Glossary powered by dataviewjs 
 - Preconfigured Plugins (see below)
 - Preconfigured theming and custom stylesheets
 
