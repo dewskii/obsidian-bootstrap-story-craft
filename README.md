@@ -19,6 +19,7 @@ Obsidian Vault Template for story crafting and world building.
 |[Vocab Entry](templates/vocabEntry.md) | &#x21E7;+&#8984;+V |
 
 ## Plugins
+- [auto-filemover](https://github.com/rcsaquino/obsidian-auto-filename)
 - [auto-note-mover](https://obsidian.md/plugins?id=auto-note-mover)
 - [dataview](https://obsidian.md/plugins?id=dataview)
 - [extended-graph](https://obsidian.md/plugins?id=extended-graph)

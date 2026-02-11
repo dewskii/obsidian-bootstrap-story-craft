@@ -1,0 +1,12 @@
+{
+  "includeFolders": [
+    "Resources"
+  ],
+  "useHeader": true,
+  "useFirstLine": true,
+  "isTitleHidden": true,
+  "supportYAML": true,
+  "includeEmojis": true,
+  "charCount": 50,
+  "checkInterval": 500
+}
